@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-21 16:22:11 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="vo.Book" table="book">
+        <id name="bid" type="java.lang.Integer">
+            <column name="bid" />
+           <generator class="native">
+           </generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="authors" />
+        </property>
+        <property name="publisher" type="java.lang.String">
+            <column name="publisher" />
+        </property>
+        <property name="publishdate" type="timestamp">
+        	<column name="publishdate"></column>
+        </property>
+        <property name="price" type="java.lang.Float">
+        	<column name="price"></column>
+        </property>
+        <many-to-one name="order" class="vo.Order" column="ORDER_ID"></many-to-one>
+    </class>
+</hibernate-mapping>
